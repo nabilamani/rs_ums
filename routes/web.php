@@ -3,7 +3,10 @@
 use App\Http\Controllers\BerandaController;
 use App\Livewire\Admin\AdminDashboard;
 use App\Livewire\Admin\EditorDashboard;
-use App\Livewire\Beritas;
+use App\Livewire\Articles\Articles;
+use App\Livewire\Articles\CategoryArticles;
+use App\Livewire\Articles\CreateArticle;
+use App\Livewire\Articles\UpdateArticle;
 use App\Livewire\Doctors\CreateSchedule;
 use App\Livewire\Doctors\Doctors;
 use App\Livewire\Doctors\Schedule;
@@ -38,7 +41,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
 
-    Route::get('beritas', Beritas::class)->name('beritas');
+    Route::get('articles', Articles::class)->name('articles');
+    Route::get('articles/create', CreateArticle::class)->name('articles.create');
+    Route::get('articles/update/{slug}', UpdateArticle::class)
+     ->name('articles.update');
+    Route::get('category-articles', CategoryArticles::class)
+        ->name('categoryarticles');
 
     Route::get('service-categories', ServiceCategories::class)
         ->name('servicecategories');

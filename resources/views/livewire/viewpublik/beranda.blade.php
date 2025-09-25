@@ -2,6 +2,7 @@
 @include('livewire.viewpublik.components.navbar')
 
 <div>
+
     <!-- Hero Section -->
     <section id="home" class="pt-20 min-h-screen flex items-center relative overflow-hidden">
         <!-- Background decorative elements -->
@@ -20,19 +21,20 @@
                     <div
                         class="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-ums-blue text-sm font-medium mb-6">
                         <i class="fas fa-star mr-2"></i>
-                        Rumah Sakit Terpercaya & Berkualitas
+                        Resmi Dibuka untuk Umum
                     </div>
 
                     <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                        Selamat Datang di
+                        Wensite Resmi
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-ums-blue to-ums-orange">
                             RS UMS
                         </span>
                     </h1>
 
                     <p class="text-xl text-gray-600 leading-relaxed mb-8">
-                        Website resmi Rumah Sakit Universitas Muhammadiyah Surakarta.
-                        Memberikan layanan kesehatan terbaik dengan fasilitas modern dan tenaga medis berpengalaman.
+                        Rumah Sakit Universitas Muhammadiyah Surakarta kini hadir resmi untuk masyarakat.
+                        Mengusung layanan kesehatan modern dengan standar unggulan dan tenaga medis profesional
+                        untuk mendukung kualitas hidup yang lebih baik.
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-4 mb-8">
@@ -51,16 +53,16 @@
                     <!-- Stats -->
                     <div class="grid grid-cols-3 gap-6">
                         <div class="text-center">
-                            <div class="text-3xl font-bold text-ums-blue mb-1">25+</div>
-                            <div class="text-sm text-gray-600">Tahun Pengalaman</div>
+                            <div class="text-3xl font-bold text-ums-blue mb-1">2025</div>
+                            <div class="text-sm text-gray-600">Tahun Peresmian</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-3xl font-bold text-ums-orange mb-1">50k+</div>
-                            <div class="text-sm text-gray-600">Pasien Dilayani</div>
+                            <div class="text-3xl font-bold text-ums-orange mb-1">Fasilitas</div>
+                            <div class="text-sm text-gray-600">Modern & Lengkap</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-3xl font-bold text-green-600 mb-1">100+</div>
-                            <div class="text-sm text-gray-600">Tenaga Medis</div>
+                            <div class="text-3xl font-bold text-green-600 mb-1">Tim</div>
+                            <div class="text-sm text-gray-600">Medis Profesional</div>
                         </div>
                     </div>
                 </div>
@@ -106,7 +108,7 @@
                                 <i class="fas fa-award text-ums-blue"></i>
                             </div>
                             <div>
-                                <p class="font-semibold text-sm">Terakreditasi A</p>
+                                <p class="font-semibold text-sm">Resmi Dibuka</p>
                                 <p class="text-xs text-gray-600">Standar Internasional</p>
                             </div>
                         </div>
@@ -115,6 +117,7 @@
             </div>
         </div>
     </section>
+
 
     <section id="layanan" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -30,13 +30,20 @@
                         </flux:sidebar.item>
                     @endif
                 @endif
+                <flux:sidebar.group expandable icon="newspaper" heading="Artikel" class="grid">
+                    {{-- Link ke halaman Spesialis --}}
+                    <flux:sidebar.item :href="route('categoryarticles')" :current="request()->routeIs('categoryarticles')"
+                        wire:navigate>
+                        {{ __('Kategori') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item :href="route('articles')" :current="request()->routeIs('articles')" wire:navigate>
+                        {{ __('Artikel') }}
+                    </flux:sidebar.item>
 
-                <flux:sidebar.item icon="newspaper" :href="route('beritas')" :current="request()->routeIs('beritas')"
-                    wire:navigate>
-                    {{ __('Artikel') }}
-                </flux:sidebar.item>
+                </flux:sidebar.group>
                 <flux:sidebar.item icon="swatch" :href="route('servicecategories')"
-                    :current="request()->routeIs('servicecategories') || request()->routeIs('services*')" wire:navigate>
+                    :current="request()->routeIs('servicecategories') || request()->routeIs('services*')"
+                    wire:navigate>
                     {{ __('Layanan') }}
                 </flux:sidebar.item>
 
