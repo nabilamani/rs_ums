@@ -1,32 +1,11 @@
+<style>
+    html {
+    overflow-y: scroll; /* Paksa scrollbar vertikal selalu tampil */
+}
+
+</style>
 {{-- Navbar --}}
 @include('livewire.viewpublik.components.navbar')
-
-
-<!-- Mobile Menu -->
-<div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-        <a href="#home" class="text-gray-700 hover:text-ums-blue block px-3 py-2 rounded-md hover:bg-blue-50">
-            <i class="fas fa-home mr-2"></i>Beranda
-        </a>
-        <a href="#profil" class="text-ums-blue font-semibold block px-3 py-2 rounded-md bg-blue-50">
-            <i class="fas fa-building mr-2"></i>Profil
-        </a>
-        <a href="#layanan" class="text-gray-700 hover:text-ums-blue block px-3 py-2 rounded-md hover:bg-blue-50">
-            <i class="fas fa-heart mr-2"></i>Layanan
-        </a>
-        <a href="#berita" class="text-gray-700 hover:text-ums-blue block px-3 py-2 rounded-md hover:bg-blue-50">
-            <i class="fas fa-newspaper mr-2"></i>Berita
-        </a>
-        <a href="#kontak" class="text-gray-700 hover:text-ums-blue block px-3 py-2 rounded-md hover:bg-blue-50">
-            <i class="fas fa-phone mr-2"></i>Kontak
-        </a>
-        <a href="#login"
-            class="bg-gradient-to-r from-ums-blue to-blue-600 text-white block px-3 py-2 rounded-md mx-3 mt-2 text-center">
-            <i class="fas fa-sign-in-alt mr-2"></i>Login
-        </a>
-    </div>
-</div>
-</nav>
 
 <!-- Hero Section -->
 <section id="profil" class="pt-24 pb-16 relative overflow-hidden">
@@ -38,7 +17,7 @@
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center mb-16">
+        <div class="text-center mt-10">
             <div
                 class="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-ums-blue text-sm font-medium mb-6 animate-fade-in-up">
                 <i class="fas fa-building-flag mr-2"></i>

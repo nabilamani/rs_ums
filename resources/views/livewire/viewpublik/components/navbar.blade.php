@@ -58,51 +58,285 @@
                     <div class="flex-shrink-0">
                         <div
                             class="w-12 h-12 bg-gradient-to-br from-ums-blue to-ums-orange rounded-lg flex items-center justify-center shadow-lg">
-                            <img src="./assets/logo_ums.png" alt="Hospital" class="w-10 h-10 object-contain">
+                            <img src="../assets/logo_ums.png" alt="Hospital" class="w-10 h-10 object-contain">
                         </div>
                     </div>
 
                     <div>
-                        <h1 class="text-xl font-bold text-ums-blue">RS UMS</h1>
-                        <p class="text-xs text-gray-600">Rumah Sakit Terpercaya</p>
+                        <h1 class="text-xl font-bold text-blue-600">RS UMS</h1>
+                        <p class="text-xs text-gray-600">Rumah Sakit AR Fachruddin</p>
                     </div>
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="{{ route('index') }}"
-                            class="{{ request()->routeIs('index') ? 'text-ums-blue font-semibold bg-blue-50' : 'text-gray-700 hover:text-ums-blue hover:bg-blue-50' }} px-3 py-2 rounded-lg transition-all">
-                            <i class="fas fa-home mr-2"></i>Beranda
-                        </a>
+                        <!-- Beranda Dropdown -->
+                        <div class="relative group">
+                            <a href="{{ route('index') }}"
+                                class="{{ request()->routeIs('index') ? 'text-blue-600 font-semibold bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50' }} px-3 py-2 rounded-lg transition-all flex items-center">
+                                <i class="fas fa-home mr-2"></i>Beranda
+                                <i
+                                    class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div
+                                class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                <div class="py-2">
+                                    <a href="#"
+                                        class="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                                        <i class="fas fa-info-circle mr-3 text-blue-500"></i>
+                                        <div>
+                                            <div class="font-medium">Sambutan Direktur</div>
+                                            <div class="text-xs text-gray-500">Pesan dari pimpinan</div>
+                                        </div>
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                                        <i class="fas fa-eye mr-3 text-green-500"></i>
+                                        <div>
+                                            <div class="font-medium">Visi & Misi</div>
+                                            <div class="text-xs text-gray-500">Tujuan dan harapan</div>
+                                        </div>
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                                        <i class="fas fa-newspaper mr-3 text-purple-500"></i>
+                                        <div>
+                                            <div class="font-medium">Berita Terbaru</div>
+                                            <div class="text-xs text-gray-500">Update informasi</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 
-                        {{-- Profil --}}
-                        <a href="{{ route('profile') }}"
-                            class="{{ request()->routeIs('profile') ? 'text-ums-blue font-semibold bg-blue-50' : 'text-gray-700 hover:text-ums-blue hover:bg-blue-50' }} px-3 py-2 rounded-lg transition-all">
-                            <i class="fas fa-building mr-2"></i>Profil
+                        <!-- Profil Dropdown -->
+                        <div class="relative group">
+                            <a href="{{ route('profile') }}"
+                                class="{{ request()->routeIs('profile') ? 'text-blue-600 font-semibold bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50' }} px-3 py-2 rounded-lg transition-all flex items-center">
+                                <i class="fas fa-building mr-2"></i>Profil
+                                <i
+                                    class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div
+                                class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                <div class="py-2">
+                                    <a href="{{ route('profile') }}"
+                                        class="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                                        <i class="fas fa-history mr-3 text-blue-500"></i>
+                                        <div>
+                                            <div class="font-medium">Sejarah</div>
+                                            <div class="text-xs text-gray-500">Perjalanan rumah sakit</div>
+                                        </div>
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                                        <i class="fas fa-sitemap mr-3 text-green-500"></i>
+                                        <div>
+                                            <div class="font-medium">Struktur Organisasi</div>
+                                            <div class="text-xs text-gray-500">Manajemen rumah sakit</div>
+                                        </div>
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                                        <i class="fas fa-award mr-3 text-yellow-500"></i>
+                                        <div>
+                                            <div class="font-medium">Akreditasi</div>
+                                            <div class="text-xs text-gray-500">Sertifikat dan pengakuan</div>
+                                        </div>
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                                        <i class="fas fa-map-marker-alt mr-3 text-red-500"></i>
+                                        <div>
+                                            <div class="font-medium">Lokasi & Denah</div>
+                                            <div class="text-xs text-gray-500">Alamat dan petunjuk</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Layanan Dropdown -->
+                        <div class="relative group">
+                            <a href="{{ route('layanan') }}"
+                                class="{{ request()->routeIs('layanan') ? 'text-blue-600 font-semibold bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50' }} px-3 py-2 rounded-lg transition-all flex items-center">
+                                <i class="fas fa-heart mr-2"></i>Layanan
+                                <i
+                                    class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div
+                                class="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                <div class="py-2">
+                                    <a href="#"
+                                        class="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                                        <i class="fas fa-user-md mr-3 text-blue-500"></i>
+                                        <div>
+                                            <div class="font-medium">Rawat Jalan</div>
+                                            <div class="text-xs text-gray-500">Konsultasi dokter spesialis</div>
+                                        </div>
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                                        <i class="fas fa-bed mr-3 text-green-500"></i>
+                                        <div>
+                                            <div class="font-medium">Rawat Inap</div>
+                                            <div class="text-xs text-gray-500">Perawatan rumah sakit</div>
+                                        </div>
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                                        <i class="fas fa-ambulance mr-3 text-red-500"></i>
+                                        <div>
+                                            <div class="font-medium">IGD</div>
+                                            <div class="text-xs text-gray-500">Instalasi Gawat Darurat</div>
+                                        </div>
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                                        <i class="fas fa-flask mr-3 text-purple-500"></i>
+                                        <div>
+                                            <div class="font-medium">Laboratorium</div>
+                                            <div class="text-xs text-gray-500">Pemeriksaan dan analisis</div>
+                                        </div>
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                                        <i class="fas fa-x-ray mr-3 text-orange-500"></i>
+                                        <div>
+                                            <div class="font-medium">Radiologi</div>
+                                            <div class="text-xs text-gray-500">Rontgen dan CT-Scan</div>
+                                        </div>
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                                        <i class="fas fa-pills mr-3 text-teal-500"></i>
+                                        <div>
+                                            <div class="font-medium">Farmasi</div>
+                                            <div class="text-xs text-gray-500">Apotek rumah sakit</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Informasi Dropdown -->
+                        <div class="relative group">
+                            <a href="{{ route('artikel') }}"
+                                class="{{ request()->routeIs('artikel') ? 'text-blue-600 font-semibold bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50' }} px-3 py-2 rounded-lg transition-all flex items-center">
+                                <i class="fas fa-newspaper mr-2"></i>Informasi
+                                <i
+                                    class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div
+                                class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                <div class="py-2">
+                                    <a href="#"
+                                        class="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                                        <i class="fas fa-bullhorn mr-3 text-blue-500"></i>
+                                        <div>
+                                            <div class="font-medium">Pengumuman</div>
+                                            <div class="text-xs text-gray-500">Info terbaru</div>
+                                        </div>
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                                        <i class="fas fa-calendar-check mr-3 text-green-500"></i>
+                                        <div>
+                                            <div class="font-medium">Event & Kegiatan</div>
+                                            <div class="text-xs text-gray-500">Agenda mendatang</div>
+                                        </div>
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                                        <i class="fas fa-file-download mr-3 text-purple-500"></i>
+                                        <div>
+                                            <div class="font-medium">Download</div>
+                                            <div class="text-xs text-gray-500">Formulir dan dokumen</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Jadwal Dokter Dropdown -->
+                        <div class="relative group">
+                            <a href="{{ route('jadwal-dokter') }}" class="{{ request()->routeIs('jadwal-dokter') ? 'text-blue-600 font-semibold bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50' }} px-3 py-2 rounded-lg transition-all flex items-center">
+                            <i class="fa-solid fa-calendar mr-2"></i>Jadwal Dokter
+                            <i class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
                         </a>
-                        <a href="#layanan"
-                            class="text-gray-700 hover:text-ums-blue px-3 py-2 rounded-lg transition-all hover:bg-blue-50">
-                            <i class="fas fa-heart mr-2"></i>Layanan
-                        </a>
-                        <a href="#berita"
-                            class="text-gray-700 hover:text-ums-blue px-3 py-2 rounded-lg transition-all hover:bg-blue-50">
-                            <i class="fas fa-newspaper mr-2"></i>Berita
-                        </a>
-                        <a href="#kontak"
-                            class="text-gray-700 hover:text-ums-blue px-3 py-2 rounded-lg transition-all hover:bg-blue-50">
-                            <i class="fas fa-phone mr-2"></i>Kontak
-                        </a>
-                        <a href="#login"
-                            class="bg-gradient-to-r from-ums-blue to-blue-600 text-white px-6 py-2 rounded-lg hover:shadow-lg transition-all transform hover:-translate-y-0.5">
-                            <i class="fas fa-sign-in-alt mr-2"></i>Login
-                        </a>
+                            <div
+                                class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                <div class="py-2">
+                                    <a href="#"
+                                        class="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                                        <i class="fas fa-search mr-3 text-blue-500"></i>
+                                        <div>
+                                            <div class="font-medium">Cari Dokter</div>
+                                            <div class="text-xs text-gray-500">Pencarian berdasarkan nama</div>
+                                        </div>
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                                        <i class="fas fa-stethoscope mr-3 text-green-500"></i>
+                                        <div>
+                                            <div class="font-medium">Spesialis</div>
+                                            <div class="text-xs text-gray-500">Dokter berdasarkan bidang</div>
+                                        </div>
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                                        <i class="fas fa-clock mr-3 text-orange-500"></i>
+                                        <div>
+                                            <div class="font-medium">Jadwal Hari Ini</div>
+                                            <div class="text-xs text-gray-500">Dokter yang tersedia</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- Kontak Darurat Group --}}
+                        <div class="flex items-center space-x-4">
+                            {{-- Emergency --}}
+                            <a href="tel:112"
+                                class="relative group flex items-center justify-center w-10 h-10 rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition-all"
+                                aria-label="Emergency">
+                                <i class="fas fa-ambulance text-lg"></i>
+                                <span
+                                    class="absolute top-full mt-2 px-2 py-1 text-xs text-white bg-red-600 rounded opacity-0 group-hover:opacity-100 group-hover:translate-y-0 -translate-y-1 transition">
+                                    Emergency
+                                </span>
+                            </a>
+
+                            {{-- Call Center --}}
+                            <a href="tel:0271xxxxxx"
+                                class="relative group flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-600 hover:bg-blue-200 transition-all"
+                                aria-label="Call Center">
+                                <i class="fas fa-phone-alt text-lg"></i>
+                                <span
+                                    class="absolute top-full mt-2 px-2 py-1 text-xs text-white bg-blue-600 rounded opacity-0 group-hover:opacity-100 group-hover:translate-y-0 -translate-y-1 transition">
+                                    Call Center
+                                </span>
+                            </a>
+
+                            {{-- WhatsApp --}}
+                            <a href="https://wa.me/628xxxxxxxxxx" target="_blank"
+                                class="relative group flex items-center justify-center w-10 h-10 rounded-full bg-green-100 text-green-600 hover:bg-green-200 transition-all"
+                                aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp text-lg"></i>
+                                <span
+                                    class="absolute top-full mt-2 px-2 py-1 text-xs text-white bg-green-600 rounded opacity-0 group-hover:opacity-100 group-hover:translate-y-0 -translate-y-1 transition">
+                                    WhatsApp
+                                </span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-ums-blue p-2">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600 p-2">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -112,26 +346,126 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" class="text-ums-blue font-semibold block px-3 py-2 rounded-md bg-blue-50">
-                    <i class="fas fa-home mr-2"></i>Beranda
-                </a>
-                <a href="#profil" class="text-gray-700 hover:text-ums-blue block px-3 py-2 rounded-md hover:bg-blue-50">
-                    <i class="fas fa-building mr-2"></i>Profil
-                </a>
-                <a href="#layanan"
-                    class="text-gray-700 hover:text-ums-blue block px-3 py-2 rounded-md hover:bg-blue-50">
-                    <i class="fas fa-heart mr-2"></i>Layanan
-                </a>
-                <a href="#berita" class="text-gray-700 hover:text-ums-blue block px-3 py-2 rounded-md hover:bg-blue-50">
-                    <i class="fas fa-newspaper mr-2"></i>Berita
-                </a>
-                <a href="#kontak" class="text-gray-700 hover:text-ums-blue block px-3 py-2 rounded-md hover:bg-blue-50">
-                    <i class="fas fa-phone mr-2"></i>Kontak
-                </a>
-                <a href="#login"
-                    class="bg-gradient-to-r from-ums-blue to-blue-600 text-white block px-3 py-2 rounded-md mx-3 mt-2 text-center">
-                    <i class="fas fa-sign-in-alt mr-2"></i>Login
-                </a>
+                <!-- Mobile Beranda -->
+                <div class="mobile-dropdown">
+                    <button
+                        class="mobile-dropdown-btn w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md flex items-center justify-between">
+                        <span><i class="fas fa-home mr-2"></i>Beranda</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-6 space-y-1">
+                        <a href="#"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">Sambutan
+                            Direktur</a>
+                        <a href="#"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">Visi
+                            & Misi</a>
+                        <a href="#"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">Berita
+                            Terbaru</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Profil -->
+                <div class="mobile-dropdown">
+                    <button
+                        class="mobile-dropdown-btn w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md flex items-center justify-between">
+                        <span><i class="fas fa-building mr-2"></i>Profil</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-6 space-y-1">
+                        <a href="#"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">Sejarah</a>
+                        <a href="#"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">Struktur
+                            Organisasi</a>
+                        <a href="#"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">Akreditasi</a>
+                        <a href="#"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">Lokasi
+                            & Denah</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Layanan -->
+                <div class="mobile-dropdown">
+                    <button
+                        class="mobile-dropdown-btn w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md flex items-center justify-between">
+                        <span><i class="fas fa-heart mr-2"></i>Layanan</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-6 space-y-1">
+                        <a href="#"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">Rawat
+                            Jalan</a>
+                        <a href="#"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">Rawat
+                            Inap</a>
+                        <a href="#"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">IGD</a>
+                        <a href="#"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">Laboratorium</a>
+                        <a href="#"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-50 rounded-md">Radiologi</a>
+                        <a href="#"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">Farmasi</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Informasi -->
+                <div class="mobile-dropdown">
+                    <button
+                        class="mobile-dropdown-btn w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md flex items-center justify-between">
+                        <span><i class="fas fa-newspaper mr-2"></i>Informasi</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-6 space-y-1">
+                        <a href="#"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">Pengumuman</a>
+                        <a href="#"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">Event
+                            & Kegiatan</a>
+                        <a href="#"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">Download</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Jadwal Dokter -->
+                <div class="mobile-dropdown">
+                    <button
+                        class="mobile-dropdown-btn w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md flex items-center justify-between">
+                        <span><i class="fa-solid fa-calendar mr-2"></i>Jadwal Dokter</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-6 space-y-1">
+                        <a href="#"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">Cari
+                            Dokter</a>
+                        <a href="#"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">Spesialis</a>
+                        <a href="#"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">Jadwal
+                            Hari Ini</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Emergency Contacts -->
+                <div class="border-t border-gray-200 pt-3 mt-3">
+                    <div class="flex justify-center space-x-4">
+                        <a href="tel:112"
+                            class="flex items-center justify-center w-12 h-12 rounded-full bg-red-100 text-red-600">
+                            <i class="fas fa-ambulance"></i>
+                        </a>
+                        <a href="tel:0271xxxxxx"
+                            class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600">
+                            <i class="fas fa-phone-alt"></i>
+                        </a>
+                        <a href="https://wa.me/628xxxxxxxxxx" target="_blank"
+                            class="flex items-center justify-center w-12 h-12 rounded-full bg-green-100 text-green-600">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -139,26 +473,46 @@
     <!-- JavaScript -->
     <script>
         // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+}
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+// Mobile dropdown functionality
+document.querySelectorAll('.mobile-dropdown-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const dropdown = button.closest('.mobile-dropdown');
+        const content = dropdown.querySelector('.mobile-dropdown-content');
+        const icon = button.querySelector('.fas.fa-chevron-down');
+        
+        // Close other dropdowns
+        document.querySelectorAll('.mobile-dropdown').forEach(otherDropdown => {
+            if (otherDropdown !== dropdown) {
+                const otherContent = otherDropdown.querySelector('.mobile-dropdown-content');
+                const otherIcon = otherDropdown.querySelector('.fas.fa-chevron-down');
+                otherContent.classList.add('hidden');
+                otherIcon.classList.remove('rotate-180');
+            }
         });
+        
+        // Toggle current dropdown
+        content.classList.toggle('hidden');
+        icon.classList.toggle('rotate-180');
+    });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('nav') && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+    }
+});
+
 
         // Back to top button
         const backToTopBtn = document.getElementById('backToTop');

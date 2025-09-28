@@ -5,19 +5,28 @@ namespace App\Livewire\Doctors;
 use App\Models\Doctor;
 use Flux\Flux;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Doctors extends Component
 {
+    use WithPagination;         // ✅ Aktifkan pagination
+
     // Dengarkan event dari komponen CreateDoctor agar list auto refresh
     protected $listeners = ['doctorAdded' => '$refresh'];
 
     // id dokter yang akan dihapus
     public ?int $deleteId = null;
 
+    // Untuk reset ke halaman 1 saat ada update (opsional)
+    protected $paginationTheme = 'tailwind'; // atau 'bootstrap' sesuai kebutuhan
+
     public function render()
     {
         return view('livewire.doctors.doctors', [
-            'doctors' => Doctor::with('specialty')->latest()->get(),
+            // ✅ Gunakan paginate(12)
+            'doctors' => Doctor::with('specialty')
+                ->latest()
+                ->paginate(12),
         ]);
     }
 

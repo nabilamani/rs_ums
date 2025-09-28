@@ -12,7 +12,7 @@ class EditorMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if (!Auth::check() || Auth::user()->role !== 'editor') {
-            return redirect()->route('home');
+            return redirect()->back();
         }
 
         return $next($request);

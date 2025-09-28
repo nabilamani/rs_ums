@@ -21,10 +21,14 @@ class Article extends Model
         'author_id',
         'thumbnail',
         'status',
+        'views',
     ];
 
     protected $dates = [
         'published_at',
+    ];
+    protected $casts = [
+        'published_at' => 'datetime',  // <— penting
     ];
 
     /**

@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\JadwalController;
 use App\Livewire\Admin\AdminDashboard;
 use App\Livewire\Admin\EditorDashboard;
 use App\Livewire\Articles\Articles;
@@ -22,6 +24,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/profile', function () {
     return view('livewire.viewpublik.profile');
 })->name('profile');
+
+Route::get('/layanan', function () {
+    return view('livewire.viewpublik.layanan');
+})->name('layanan');
+
+Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel');
+Route::get('/artikel/{slug}', [ArtikelController::class, 'show'])->name('artikel.show');
+
+Route::get('/jadwaldokter', [JadwalController::class, 'index'])
+    ->name('jadwal-dokter');
 
 Route::get('/', [BerandaController::class, 'index'])->name('index');
 

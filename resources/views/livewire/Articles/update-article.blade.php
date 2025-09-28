@@ -1,5 +1,5 @@
 {{-- resources/views/livewire/articles/update-article.blade.php --}}
-<div class="max-w-6xl mx-auto p-6">
+<div class="mx-auto p-6">
     <flux:heading size="xl" class="mb-8 text-center text-gray-900 dark:text-gray-100">Edit Artikel</flux:heading>
     
     @if (session()->has('success'))

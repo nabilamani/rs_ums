@@ -12,6 +12,7 @@ class UpdateSpecialty extends Component
 {
     public $name;
     public $description;
+    public $icon;           // <-- tambahkan properti icon
     public $specialtyId;
 
     #[On('editSpecialty')]
@@ -22,8 +23,8 @@ class UpdateSpecialty extends Component
         $this->specialtyId  = $specialty->id;
         $this->name         = $specialty->name;
         $this->description  = $specialty->description;
+        $this->icon         = $specialty->icon; // <-- isi default
 
-        // buka modal edit
         Flux::modal('editSpecialty')->show();
     }
 
@@ -37,24 +38,44 @@ class UpdateSpecialty extends Component
                 Rule::unique('specialties', 'name')->ignore($this->specialtyId),
             ],
             'description' => ['nullable', 'string'],
+            'icon'        => ['nullable', 'string', 'max:255'], // <-- validasi icon
         ]);
+
+        // filter icon agar hanya class
+        $this->icon = $this->normalizeIcon($this->icon);
 
         Specialty::findOrFail($this->specialtyId)->update([
             'name'        => $this->name,
             'description' => $this->description,
+            'icon'        => $this->icon,
         ]);
 
-        // kirim event agar daftar spesialis ter-refresh
         $this->dispatch('specialtyAdded');
 
         // reset form
-        $this->reset(['name', 'description', 'specialtyId']);
+        $this->reset(['name', 'description', 'icon', 'specialtyId']);
 
-        // pesan sukses
         session()->flash('success', 'Data spesialis berhasil diperbarui.');
 
-        // tutup modal
         Flux::modal('editSpecialty')->close();
+    }
+
+    private function normalizeIcon(?string $icon): ?string
+    {
+        if (!$icon) return null;
+
+        // jika user paste <i class="mdi mdi-hospital"></i>
+        if (preg_match('/class\s*=\s*"([^"]+)"/i', $icon, $m)) {
+            return trim($m[1]);
+        }
+
+        // jika user paste <i class='mdi mdi-hospital'></i>
+        if (preg_match("/class\s*=\s*'([^']+)'/i", $icon, $m)) {
+            return trim($m[1]);
+        }
+
+        // kalau sudah cuma class
+        return trim(strip_tags($icon));
     }
 
     public function render()

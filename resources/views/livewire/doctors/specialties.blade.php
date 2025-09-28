@@ -27,6 +27,10 @@
         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
             <thead class="bg-gray-50 dark:bg-gray-800">
                 <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider
+                               text-gray-600 dark:text-gray-300">
+                        Icon
+                    </th>
                     <th
                         class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider
                                text-gray-600 dark:text-gray-300">
@@ -48,6 +52,14 @@
             <tbody class="divide-y divide-gray-200 dark:divide-gray-700 bg-white dark:bg-gray-900">
                 @forelse ($specialties as $specialty)
                     <tr>
+                        <td class="px-6 py-4 text-center text-xl text-gray-700 dark:text-gray-300">
+                            @if($specialty->icon)
+                                {{-- Pastikan sudah memuat CDN/icon library (misal Material Design Icons) di layout --}}
+                                <i class="{{ $specialty->icon }}"></i>
+                            @else
+                                –
+                            @endif
+                        </td>
                         <td class="px-6 py-4 text-sm font-semibold text-gray-900 dark:text-gray-100">
                             {{ $specialty->name }}
                         </td>

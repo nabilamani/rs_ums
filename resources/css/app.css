@@ -66,6 +66,9 @@ select:focus[data-flux-control] {
   [class*="flux-button"] {
     @apply cursor-pointer;
   }
+  .pagination a {
+    @apply cursor-pointer;
+  }
 }
 
 .dark .note-editor {
